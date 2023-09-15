@@ -1,0 +1,19 @@
+.sidebar{
+    padding-top: 100px;
+    position: fixed;
+    top:0;
+    padding-bottom: 0;
+    height:100%;
+    width:220px;
+    background-color: transparent;
+    background-color:transparent;
+}
+
+.mainArea{
+    padding-left: 240px;
+    display: flex;
+}
+
+.cardListWrapper{
+    display: flex;
+}

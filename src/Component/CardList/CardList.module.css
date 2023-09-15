@@ -1,0 +1,96 @@
+.cardList{
+    min-width: 290px;
+    width: 290px;
+    max-height: 100%;
+    flex-basis: 290px;
+    display: flex;
+    flex-direction: column;
+    gap: 20px;
+}
+.cardListTitle{
+    width: 98%;
+    font-weight:600;
+    margin: 8px 8px 8px 8px;
+}
+.listCard{
+    display: flex;
+    flex: 1 1 auto;
+    flex-direction: column;
+    gap: 7px;
+    justify-content: space-between;
+    margin: 0 4px;
+    min-height: 0;
+    overflow-x: hidden;
+    overflow-y: auto;
+    padding: 1px 4px 0;
+    z-index: 1;
+}
+
+.footer{
+    margin: 8px 8px 8px 8px;
+    padding: 4px 8px 4px 6px;
+}
+.footer:hover{
+    background-color: azure;
+    cursor: pointer;
+}
+
+  
+.cardList_header{
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+  
+  .cardList_header_title {
+    font-weight: bold;
+    font-size: 1rem;
+    display: flex;
+    gap: 5px;
+    align-items: center;
+  }
+  
+  .cardList_header_title span {
+    color: rgb(145, 145, 145);
+  }
+  
+  .cardList_header_title_more {
+    cursor: pointer;
+    position: relative;
+  }
+  
+  .cardList_dropdown {
+    box-shadow: 1px 0px 20px rgba(0, 0, 0, 0.12);
+    padding: 20px;
+    width: 150px !important;
+    cursor: default;
+  }
+  .cardList_dropdown p {
+    border-bottom: 1px solid #f8f8f8;
+    cursor: pointer;
+  }
+  
+  .cardList_cards {
+    background-color: #f8f8f8;
+    padding: 10px;
+    border-radius: 5px;
+    display: flex;
+    flex-direction: column;
+    gap: 10px;
+    overflow-y: auto;
+  }
+  
+  .cardList_add_card {
+    background-color: #fff;
+    color: #000;
+    border-radius: 10px;
+    box-shadow: 1px 1px 0 1px rgba(0, 0, 0, 0.12);
+    width: 100%;
+    text-align: center;
+  }
+  .cardList_add_card_edit {
+    background-color: #fff;
+    border-radius: 10px;
+    padding: 10px;
+  }
+  

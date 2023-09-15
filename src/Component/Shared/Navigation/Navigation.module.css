@@ -1,0 +1,60 @@
+
+*{
+    box-sizing: border-box;
+}
+
+.navigation{
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    background-color:#5920c5;
+    height: 41px;
+    width: 100vw;
+    padding:40px 7vw;
+}
+
+.right{
+    box-sizing: inherit;
+    display: flex;
+    align-items: center;
+}
+.left{
+    box-sizing: inherit;
+    display: flex;
+    width: 22vw;
+    height: 40px;
+    align-items: center;
+}
+.logo{
+    box-sizing: inherit;
+    height: 24px;
+    width: 74px;
+    margin: 0 20px 0 0;
+    overflow:clip;
+}
+
+.categoryWrapper{
+    box-sizing: inherit;
+    display: flex;
+    padding: 24px 20px;
+    align-items: center;
+    font:16px inter;
+    color:#fff;
+    cursor: pointer;
+}
+.categoryTitle{
+    padding: 0 8px;
+}
+.loginbuttonWrapper{
+    width: 93px;
+    height: 40px;
+    margin-right:10px;
+    background-color: rgb(15,164,87);
+}
+
+
+.createButton{
+    font-weight: 600;
+    padding: 10px;
+    background-color: #9468e4;
+}
