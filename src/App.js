@@ -1,12 +1,8 @@
 import React from 'react';
-import Navigation from './Component/Shared/Navigation/Navigation';
+
 import User from './User/User';
 import './App.css';
-import Card from './Component/Shared/Card/Card';
-import Editable from './Component/Editabled/Editable';
-import CardList from './Component/CardList/CardList';
 
-import { useState, useEffect } from 'react';
 
 function App() {
   

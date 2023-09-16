@@ -1,5 +1,5 @@
-import React, { useState } from "react";
-import { MoreHorizontal } from "react-feather";
+import React from "react";
+
 
 import Card from "../Card/Card";
 import Editable from "../Editabled/Editable";
@@ -7,7 +7,7 @@ import Editable from "../Editabled/Editable";
 import style from "./CardList.module.css";
 
 function CardList(props) {
-  const [showDropdown, setShowDropdown] = useState(false);
+  
 
   return (
     <div className={style.cardList}>
