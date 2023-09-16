@@ -1,70 +1,70 @@
-# Getting Started with Create React App
+## Tables
 
-This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).
+* **board**
+    * id (primary key)
+    * name
+    * description
 
-## Available Scripts
+* **stage**
+    * id (primary key)
+    * board_id (foreign key to the `board` table)
+    * title
+    * order
 
-In the project directory, you can run:
+* **task**
+    * id (primary key)
+    * board_id (foreign key to the `board` table)
+    * stage_id (foreign key to the `stage` table)
+    * title
+    * description
+    * due_date
+    * assignee_id (foreign key to the `user` table)
 
-### `npm start`
+* **comment**
+    * id (primary key)
+    * task_id (foreign key to the `task` table)
+    * user_id (foreign key to the `user` table)
+    * content
+    * created_at
 
-Runs the app in the development mode.\
-Open [http://localhost:3000](http://localhost:3000) to view it in your browser.
+## API endpoints
 
-The page will reload when you make changes.\
-You may also see any lint errors in the console.
+**Boards**
 
-### `npm test`
+* `GET /boards`
+* `POST /boards`
+* `GET /boards/:boardId`
+* `PUT /boards/:boardId`
+* `DELETE /boards/:boardId`
 
-Launches the test runner in the interactive watch mode.\
-See the section about [running tests](https://facebook.github.io/create-react-app/docs/running-tests) for more information.
+**Stages**
 
-### `npm run build`
+* `POST /boards/:boardId/stages`
+* `GET /boards/:boardId/stages`
+* `GET /boards/:boardId/stages/:stageId`
+* `PUT /boards/:boardId/stages/:stageId`
+* `DELETE /boards/:boardId/stages/:stageId`
 
-Builds the app for production to the `build` folder.\
-It correctly bundles React in production mode and optimizes the build for the best performance.
+**Tasks**
 
-The build is minified and the filenames include the hashes.\
-Your app is ready to be deployed!
+* `POST /boards/:boardId/tasks`
+* `GET /boards/:boardId/tasks`
+* `GET /boards/:boardId/tasks/:taskId`
+* `PUT /boards/:boardId/tasks/:taskId`
+* `DELETE /boards/:boardId/tasks/:taskId`
 
-See the section about [deployment](https://facebook.github.io/create-react-app/docs/deployment) for more information.
+**Comments**
 
-### `npm run eject`
+* `POST /tasks/:taskId/comments`
+* `GET /tasks/:taskId/comments`
+* `GET /tasks/:taskId/comments/:commentId`
+* `PUT /tasks/:taskId/comments/:commentId`
+* `DELETE /tasks/:taskId/comments/:commentId`
 
-**Note: this is a one-way operation. Once you `eject`, you can't go back!**
+  ## Error handling:
 
-If you aren't satisfied with the build tool and configuration choices, you can `eject` at any time. This command will remove the single build dependency from your project.
+I would use a combination of the following error handling strategies:
 
-Instead, it will copy all the configuration files and the transitive dependencies (webpack, Babel, ESLint, etc) right into your project so you have full control over them. All of the commands except `eject` will still work, but they will point to the copied scripts so you can tweak them. At this point you're on your own.
-
-You don't have to ever use `eject`. The curated feature set is suitable for small and middle deployments, and you shouldn't feel obligated to use this feature. However we understand that this tool wouldn't be useful if you couldn't customize it when you are ready for it.
-
-## Learn More
-
-You can learn more in the [Create React App documentation](https://facebook.github.io/create-react-app/docs/getting-started).
-
-To learn React, check out the [React documentation](https://reactjs.org/).
-
-### Code Splitting
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/code-splitting](https://facebook.github.io/create-react-app/docs/code-splitting)
-
-### Analyzing the Bundle Size
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/analyzing-the-bundle-size](https://facebook.github.io/create-react-app/docs/analyzing-the-bundle-size)
-
-### Making a Progressive Web App
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/making-a-progressive-web-app](https://facebook.github.io/create-react-app/docs/making-a-progressive-web-app)
-
-### Advanced Configuration
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/advanced-configuration](https://facebook.github.io/create-react-app/docs/advanced-configuration)
-
-### Deployment
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/deployment](https://facebook.github.io/create-react-app/docs/deployment)
-
-### `npm run build` fails to minify
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/troubleshooting#npm-run-build-fails-to-minify](https://facebook.github.io/create-react-app/docs/troubleshooting#npm-run-build-fails-to-minify)
+* HTTP status codes: I would use standard HTTP status codes to indicate the type of error that occurred. For example, I would use a 400 Bad Request status code if the user's request was invalid, and a 500 Internal Server Error status code if an unexpected error occurred.
+* Error messages: I would include a descriptive error message in the response body to help the user understand what went wrong.
+* Logging: I would log all errors to a database or file so that I can track down and resolve the root cause of the problems.
