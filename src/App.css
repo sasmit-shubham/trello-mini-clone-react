@@ -8,6 +8,8 @@ html, body, div, h1, h2, h3, p, ul, li {
   height: 100vh;
   display: flex;
   flex-direction: column;
+  background-image:url("/public/cool-background.svg");
+  background-size: cover;
 }
 
 .app_nav {

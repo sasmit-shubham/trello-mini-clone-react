@@ -14,9 +14,6 @@ function App() {
   // };
   return (
     <div className="app">
-      <div className="app_nav">
-        <h1>Trello Clone</h1>
-      </div>
       <User/>
     </div>
   );

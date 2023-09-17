@@ -1,12 +1,14 @@
 import React from 'react'
 import { useState } from 'react'
 import Editable from '../Component/Editabled/Editable'
+import Navigation from '../Component/Shared/Navigation/Navigation'
 import style from "./User.module.css"
-
+import Sidebar from '../Component/Shared/Sidebar/Sidebar'
 import CardList from '../Component/CardList/CardList'
+import BoardInfo from '../BoardInfo/BoardInfo'
 const User = () => {
   const [boards, setBoards] = useState([])
-  const [newBoardName,SetNewBoardName] = useState("")
+  const [newBoardName,setNewBoardName] = useState("")
   const [selectedBoard, setSelectedBoard] = useState(null);
   const [targetCard, setTargetCard] = useState({
     bid: "",
@@ -96,7 +98,7 @@ const User = () => {
     }
 
     setBoards([...boards, newBoard]);
-    SetNewBoardName("");
+    setNewBoardName("");
   }
   
   const addCardListHandler = (name) => {
@@ -116,10 +118,6 @@ const User = () => {
         }
         return board; // For other boards, return them as they are
     });
-
-    // Update the state with the new array of boards
- 
-    // setSelectedBoard(updatedBoards.filter((board)=>board.id===selectedBoard.id));
     setBoards(updatedBoards);
     setSelectedBoard(updatedBoards.find((board) => board.id === selectedBoard.id));
     console.log("update board is" + updatedBoards)
@@ -129,21 +127,19 @@ const User = () => {
   const onClickHandler = (board) => {
     setSelectedBoard(board)
   }
+  const addBoardName = (e) =>{
+    setNewBoardName(e.target.value);
+  }
   return (
     <div>
-        <div className={style.sidebar}>
-        <input type="text" placeholder="Enter is the Board Name" value={newBoardName} onChange={(e)=>SetNewBoardName(e.target.value)} />
-        <button onClick={addBoard}>Add Board</button>
-        {
-            boards.map((board)=>(
-            <div key = {board.id}>
-              <button onClick={()=>onClickHandler(board)} >{board.name}</button>
-            </div>
-            
-            ))
-        }
-        </div>
+        <Navigation addBoardName={addBoardName} addBoard={addBoard} newBoardName={newBoardName}/>
+        <Sidebar boards={boards} onClick={onClickHandler} selectedBoard={selectedBoard}/>
+        <BoardInfo name={selectedBoard===null?"Create Board Using Create Button":selectedBoard.name}/>
         <div className={style.mainArea}>
+        <div>
+
+        </div>
+           
             {selectedBoard!==null ? (
             <div className={style.cardListWrapper}>
                 

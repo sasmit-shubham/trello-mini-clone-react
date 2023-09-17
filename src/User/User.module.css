@@ -5,8 +5,8 @@
     padding-bottom: 0;
     height:100%;
     width:220px;
-    background-color: transparent;
-    background-color:transparent;
+    background-color: #F6F3FC;
+    z-index:1;
 }
 
 .mainArea{
