@@ -19,9 +19,9 @@ const AddBoardModal = ({ onClose,addBoardName,addBoard,newBoardName}) => {
           <AiOutlineClose size="1.5rem" />
         </button>
         <div className={styles.modalHeader}>
-          <h3 className={styles.heading}>Enter the topic to be discussed</h3>
+          <h3 className={styles.heading}>Enter the Board Name</h3>
           <TextInput fullwidth='true' value={newBoardName} onChange={(e) => addBoardName(e)} />
-          <h2 className={styles.roomTypesText}>Room Types</h2>
+          <h2 className={styles.roomTypesText}>Board Types</h2>
           <div className={styles.roomTypes}>
             <div onClick={() => setBoardType('open')}
               className={`${styles.typeBox} ${boardType === 'open' ? styles.active : ''}`}>
@@ -37,7 +37,7 @@ const AddBoardModal = ({ onClose,addBoardName,addBoard,newBoardName}) => {
         </div>
 
         <div className={styles.modalFooter}>
-          <h2>Start a room, open to everyone</h2>
+          <h2>Create Board, and Organise your Things</h2>
           <button className={styles.footerButton} onClick={()=>{addBoard(); onClose();}}>
             <img src="/images/party.png" alt="" width={20} height={20} />
             <span>Let's go</span>
